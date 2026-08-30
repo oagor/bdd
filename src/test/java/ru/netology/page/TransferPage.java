@@ -6,6 +6,7 @@ import ru.netology.data.DataHelper;
 
 import java.time.Duration;
 
+import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$;
 
@@ -35,5 +36,6 @@ public class TransferPage {
 
     public void findErrorNotification() {
         errorNotification.shouldBe(visible, Duration.ofSeconds(15));
+        errorNotification.shouldHave(text("Ошибка"));
     }
 }
